@@ -1,0 +1,45 @@
+$container-w: 620px
+$font-l: 24px
+$font-m: 20px
+$blue: #4a90e2
+$gray: #c8c8c8
+
+
+.checkbox-wrap
+  display: block
+  position: relative
+  cursor: pointer
+  input[type="checkbox"]
+    position: absolute
+    opacity: 0
+  .checkmark 
+      position: absolute
+      top: 0
+      left: 0
+      height: 24px
+      width: 24px
+      background-color: #fff  
+      border-radius: 2px
+      &::after
+        content: ''
+        display: none
+        position: absolute
+        width: 5px
+        height: 10px
+        border: solid white
+        border-width: 0 3px 3px 0
+        transform: rotate(45deg)
+        top: 5px
+        left: 8px
+
+  input[type="checkbox"]:checked ~ .checkmark
+    background: $blue
+  input[type="checkbox"]:checked ~ .checkmark::after
+    display: block;
+
+.message
+  width: $container-w
+  margin: 10px auto
+  padding-left: 35px
+  font-size: $font-l
+  color: $gray
